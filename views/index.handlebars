@@ -1,43 +1,33 @@
-<!-- Place Container -->
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h1 class="title">Eat-Da-Burger!
-        <span class="iggy">
-          {{!-- <img src="assets/images/iggy.png" alt="Iggy"> --}}
-          <br><p>Iggy's</p>
-          <br><p>Burgers</p>
-        </span>
-      </h1>
-    </div>
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Menu</h4>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled mt-3 mb-4">
 
-    <div class="col-md-12">
-      <div class="burgerImage">
-        <center>
-          <img src="assets/images/burger.png" alt="Burger">
-        </center>
+          {{#each burgers}} {{#unless devoured}} {{> burgers/burger-block devoured=true}} {{/unless}} {{/each}}
+
+        </ul>
       </div>
     </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Devoured</h4>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled mt-3 mb-4">
+          {{#each burgers}} {{#if devoured}} {{> burgers/burger-block devoured=false}} {{/if}} {{/each}}
 
-    <div class="col-md-6">
-      <h2>Burgers Menu!</h2>
-      <ul>
-        {{#each burgers}} {{#unless devoured}} {{> burgers/burger-block devoured=true}} {{/unless}} {{/each}}
-      </ul>
+        </ul>
+      </div>
     </div>
-
-
-
-    <div class="col-md-6">
-      <h2>Sorry...These Burgers Have Been Devoured!</h2>
-      <ul>
-        {{#each burgers}} {{#if devoured}} {{> burgers/burger-block devoured=false}} {{/if}} {{/each}}
-      </ul>
-    </div>
-
+  </div>
+  <div class="row">
     <div class="col-md-12">
 
-      <h2>Make Your Own Burger</h2>
+      <h3>Order your own Burger</h3>
       <form class="create-form">
 
         <div class="form-group">
@@ -46,25 +36,27 @@
         </div>
 
         <div class="form-group">
-          <button type="submit" class="center-block btn btn-default"> Add Burger<input type="radio" name="devoured" value="0" checked>
+          <button type="submit" class="btn btn-success"> Add Burger<input type="radio" name="devoured" value="0"
+              checked>
 
           </button>
 
-          {{!-- <div class="form-group">
-            <button type="submit" class="center-block btn btn-default" for="devoured" name="devoured" value="0"> Add Burger
-              <input type="radio" name="devoured" value="0" checked>
-
-            </button> --}}
-          {{!-- <label for="devoured">Devoured?</label> --}}
-          {{!-- <br>
-          <input type="radio" name="devoured" value="0" checked> Want to Eat This?
-          <br>
-          <input type="radio" name="devoured" value="1"> Already Eaten! --}}
         </div>
 
 
       </form>
     </div>
   </div>
-</div>
+
+  <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      <div class="col-12 col-md">
+        <img class="mb-2" src="../assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">
+        <small class="d-block mb-3 text-muted">&copy; 2017-2020</small>
+      </div>
+
+
+
+    </div>
+  </footer>
 </div>
