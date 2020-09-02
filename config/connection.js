@@ -8,7 +8,7 @@ if (process.env.MJX) {
         host: "localhost",
         user: "root",
         password: "password",
-        database: "robindb"
+        database: "pizzadb"
     });
 };
 

@@ -10,12 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "express": "^4.13.3",
-    "express-handlebars": "^2.0.1",
-    "mssql": "^6.2.1",
-    "mysql": "^2.18.1",
-    "nodemon": "^1.17.1",
-    "npm": "^5.7.1"
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "mysql": "^2.18.1"
   },
   "devDependencies": {
     "handlebars-helper-css": "^0.1.0"
